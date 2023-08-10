@@ -7,7 +7,6 @@
 </head>
 <body>
     <div id="app">
-        <img src="/img/vue_test/vue_test.svg" alt="">
         <img :src="backgroundImg" :style="{ 'width': '300px', 'height': '300px', 'backgroundColor': currentColor }">
         <div>
             <button v-for="colorObj in colors" :key="colorObj.color" @click="changeBackgroundColor(colorObj.color)">{{ colorObj.name }}</button>
@@ -19,7 +18,7 @@
         new Vue({
             el: '#app',
             data: {
-                backgroundImg: '/img/vue_test/vue_test.svg',
+                backgroundImg: '/vue_test/img/vue_test.svg',
                 colors: [
                     { color: 'red', name: '紅色' },
                     { color: 'green', name: '綠色' },
