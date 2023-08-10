@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更換背景顏色</title>
+</head>
+<body>
+    <div id="app">
+        <img :src="backgroundImg" :style="{ 'width': '300px', 'height': '300px', 'backgroundColor': currentColor }">
+        <div>
+            <button v-for="colorObj in colors" :key="colorObj.color" @click="changeBackgroundColor(colorObj.color)">{{ colorObj.name }}</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                backgroundImg: '/img/vue_test/vue_test.svg',
+                colors: [
+                    { color: 'red', name: '紅色' },
+                    { color: 'green', name: '綠色' },
+                    { color: 'blue', name: '藍色' },
+                    { color: 'orange', name: '橙色' },
+                    { color: 'purple', name: '紫色' },
+                    { color: 'pink', name: '粉紅色' },
+                    { color: 'yellow', name: '黃色' },
+                    { color: 'cyan', name: '青色' },
+                    { color: 'brown', name: '棕色' },
+                    { color: 'grey', name: '灰色' }
+                ],
+                currentColor: 'transparent'
+            },
+            methods: {
+                changeBackgroundColor(color) {
+                    this.currentColor = color;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
