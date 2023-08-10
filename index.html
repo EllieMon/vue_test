@@ -7,7 +7,6 @@
 </head>
 <body>
     <div id="app">
-        <img src="./img/vue_test/vue_test.svg" alt="">
         <img :src="backgroundImg" :style="{ 'width': '300px', 'height': '300px', 'backgroundColor': currentColor }">
         <div>
             <button v-for="colorObj in colors" :key="colorObj.color" @click="changeBackgroundColor(colorObj.color)">{{ colorObj.name }}</button>
